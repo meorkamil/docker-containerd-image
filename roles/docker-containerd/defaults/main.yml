@@ -1,0 +1,5 @@
+---
+# defaults file for docker-containerd
+docker_file:
+  - image_name: centos
+  - file_name: default

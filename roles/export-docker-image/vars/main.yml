@@ -1,0 +1,4 @@
+---
+# vars file for export-docker-image
+docker_node: "'docker-node' in group_names"
+kube_node: "'kube-node' in group_names"

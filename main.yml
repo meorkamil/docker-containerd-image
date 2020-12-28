@@ -1,0 +1,31 @@
+---
+- name: Building Docker image
+  hosts:  all
+  pre_tasks:
+    - name: Create directory
+      file:
+        state: directory
+        path: ~/ansible-build-image/{{ item }}
+      loop:
+       - dockerfile  
+       - export
+  roles:
+    # This for building image from docker
+    # - role: build-docker-image
+    #   docker_file: 
+    #     - file_name: centos
+    #       image_name: centos:8
+    #     - file_name: ubuntu
+    #       image_name: ubuntu:latest
+    
+    # This for extract docker images
+    - role: export-docker-image
+      docker_file: 
+        - image_name: centos
+          file_name: centos-8
+          tag: 8
+        - image_name: ubuntu
+          file_name: ubuntu-latest
+          tag: latest
+
+    # This for import to containerd
