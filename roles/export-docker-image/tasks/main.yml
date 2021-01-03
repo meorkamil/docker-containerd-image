@@ -9,7 +9,6 @@
   loop: "{{ docker_file }}"
   when: "'docker-node' in group_names"
 
-
 - name: Specifying a destination path
   fetch:
     src: ~/ansible-build-image/export/{{ item.file_name }}.tar
@@ -18,7 +17,6 @@
     validate_checksum: no
   when: "'docker-node' in group_names"
   loop: "{{ docker_file }}"
-
 
 - name: Copy to kube-node
   copy:
