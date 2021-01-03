@@ -13,19 +13,15 @@
     # This for building image from docker
     # - role: build-docker-image
     #   docker_file: 
-    #     - file_name: centos
-    #       image_name: centos:8
-    #     - file_name: ubuntu
-    #       image_name: ubuntu:latest
+    #     - file_name: flask
+    #       image_name: flask:kube
+    #   when: "'docker-node' in group_names"
     
     # This for extract docker images
     - role: export-docker-image
       docker_file: 
-        - image_name: centos
-          file_name: centos-8
-          tag: 8
-        - image_name: ubuntu
-          file_name: ubuntu-latest
-          tag: latest
+        - image_name: flask
+          file_name: flask-demo
+          tag: demo
 
     # This for import to containerd
