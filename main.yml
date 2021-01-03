@@ -24,4 +24,7 @@
           file_name: flask-demo
           tag: demo
 
-    # This for import to containerd
+    # This for import docker to containerd
+    - role: docker-containerd
+      images:
+      - name: flask-demo.tar
