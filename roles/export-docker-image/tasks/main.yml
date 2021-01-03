@@ -7,6 +7,7 @@
     archive_path: ~/ansible-build-image/export/{{ item.file_name }}.tar
     source: local
   loop: "{{ docker_file }}"
+  when: "'docker-node' in group_names"
 
 
 - name: Specifying a destination path
